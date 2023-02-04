@@ -28,9 +28,23 @@ def get_bulls_and_cows(secret, guess):
     return bulls, cows
 
 
+def result(bulls, guess_count):
+    if bulls == 4:
+        print(f"Correct, you've guessed the right number\nin {guess_count} guesses!",
+              short_line,
+              sep="\n")
+        if guess_count <= 4:
+            print("That's amazing!")
+        elif guess_count <= 7:
+            print("That's average.")
+        elif 8 <= guess_count:
+            print("That's not so good.")
+        quit()
+
+
 def play_game():
     secret = generate_number()
-
+    print(secret)
     print("Hi there!",
           short_line,
           "I've generated a random 4 digit number for you.",
@@ -59,19 +73,8 @@ def play_game():
                   short_line,
                   sep="\n")
 
-            if bulls == 4:
-                print(f"Correct, you've guessed the right number\nin {guess_count} guesses!",
-                      short_line,
-                      sep="\n")
-                if guess_count <= 4:
-                    print("That's amazing!")
-                    break
-                elif guess_count <= 7:
-                    print("That's average.")
-                    break
-                elif 8 <= guess_count:
-                    print("That's not so good.")
-                    break
+            result(bulls, guess_count)
 
 
-play_game()
+if __name__ == "__main__":
+    play_game()
