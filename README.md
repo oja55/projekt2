@@ -1,4 +1,4 @@
-# Bulls &amp; Cows / Engeto
+# Bulls &amp; Cows
 
 CZ
 
